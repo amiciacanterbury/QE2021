@@ -125,7 +125,7 @@ ggplot(data = species, aes(x = 1:30, y = species[,1]))+
 
 # Question 8: 
 
-# Creating a new data matrix using standardization: 
+# Creating a new data matrix using method = presence/ absence: 
 Spec1 <- round(decostand(species, method = "pa", 4)) # decostand() to standardized the data,
                                                               # instead of doing it manually.
 
@@ -137,7 +137,7 @@ tail(Spec1) # Looking at the bottom half of the data
 
 # Use Sørensen index to create P/A data matrix: 
 sor <- vegdist(Spec1, binary = TRUE) # binary = TRUE sets to presence/absence data
-sor_df <- round((as.matrix(sor)),4) # crates data matrix rounded to 4 decimals
+sor_df <- round((as.matrix(sor)),4) # creates data matrix rounded to 4 decimals
 sor_df[1:30, 1:30] # the first 30 rows & columns 
 
 # creates a dissimilarity matrix 
